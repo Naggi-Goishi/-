@@ -25,7 +25,7 @@ loop do
     # a[:href] -> url
     restaurants << Restaurant.new(a.inner_text, a[:href])
   end
-    # 次のurlを一覧のurlを所得
+    # 次、お店一覧のurlを所得
     # &. という記法は、ruby 2.3からなのでそれ以下だとエラーになってしまう。
     # 参照: http://qiita.com/jnchito/items/dedb3b889ab226933ccf#%E5%AD%90%E3%81%A9%E3%82%82%E3%81%AE%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%8C%E5%AD%98%E5%9C%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AB%E3%81%AE%E3%81%BF%E3%81%9D%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%82%84%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%81%A6%E6%9D%A1%E4%BB%B6%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E3%82%92%E3%81%B2%E3%81%A8%E3%81%A4%E3%81%AEif%E3%81%A7%E6%9B%B8%E3%81%8F
     next_url = toshyu_page.search('.page-move__target.page-move__target--next').first&.get_attribute('href')
